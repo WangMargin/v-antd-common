@@ -150,8 +150,8 @@ export default defineComponent({
       // 收起状态 或是 left 布局模式时，计算收起宽度
       !isMix.value && needSettingWidth.value && !isMobile.value
         ? `calc(100% - ${
-            collapsed.value || isLeft.value ? collapsedWidth.value : siderWidth.value
-          }px)`
+          collapsed.value || isLeft.value ? collapsedWidth.value : siderWidth.value
+        }px)`
         : '100%',
     );
     const right = computed(() => (needFixedHeader.value ? 0 : undefined));

@@ -13,9 +13,10 @@
       <a-menu class="ant-pro-dropdown-menu" :selected-keys="[]">
         <a-menu-item v-if="menu" key="center" @click="handleToCenter">
           <user-outlined />
-          个人中心
+          返回工作台
         </a-menu-item>
-        <a-menu-item v-if="menu" key="settings" @click="handleToSettings">
+        <!-- <a-menu-item v-if="menu" key="settings" @click="handleToSettings"> -->
+        <a-menu-item v-if="false" key="settings" @click="handleToSettings">
           <setting-outlined />
           个人设置
         </a-menu-item>
@@ -57,9 +58,7 @@ export default defineComponent({
     const { t } = useI18n();
 
     const handleToCenter = () => {
-      router.push({
-        path: '/account/center',
-      });
+      location.href = process.env.VUE_APP_SYCAMORE_WEB_URL;
     };
 
     const handleToSettings = () => {
@@ -70,9 +69,7 @@ export default defineComponent({
 
     const handleLogout = () => {
       store.dispatch(`user/${LOGOUT}`).then(() => {
-        router.push({
-          path: '/user/login',
-        });
+        location.href = process.env.VUE_APP_SYCAMORE_WEB_URL;
       });
     };
 
@@ -98,7 +95,7 @@ export default defineComponent({
   vertical-align: unset;
 }
 .ant-pro-header-account-avatar {
-  margin: 12px 8px 12px 0;
+  margin: 20px 8px 20px 0;
   color: @primary-color;
   vertical-align: top;
   background: hsla(0, 0%, 100%, 0.85);

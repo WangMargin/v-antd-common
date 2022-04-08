@@ -31,8 +31,7 @@ export function loadLanguageAsync(lang = defaultLang) {
         return import(
           /* webpackChunkName: "lang-[request]" */
           // eslint-disable-next-line comma-dangle
-          `./lang/${lang}`
-        ).then(result => {
+          `./lang/${lang}`).then(result => {
           const loadedLang = result.default; // set vue-i18n lang
 
           currentLocale.setLocaleMessage(lang, loadedLang); // set moment lang

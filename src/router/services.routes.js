@@ -1,24 +1,14 @@
 import Layout from '@/layouts/index.vue'; // import UserLayout from '@/layouts/user-layout.vue';
 import RouteView from '@/layouts/route-view.vue';
-import Home from '@/views/services/home.vue';
-const name = 'services'
+import Teacher from '@/views/services/teacher/index';
+const name = 'services';
 const routes = [
-
   {
     name: 'index',
     path: '/',
     redirect: '/',
     component: Layout,
     children: [
-      {
-        path: '/services/teacher',
-        name: name + 'teacher',
-        meta: {
-          title: 'teacher',
-          icon: ''
-        },
-        component: () => import('@/views/services/teacher/index'),
-      },
       {
         path: '/services',
         name: name + 'index',
@@ -39,7 +29,39 @@ const routes = [
           },
         ],
       },
+      {
+        path: '/services/table',
+        name: name + 'table',
+        meta: {
+          title: '表各',
+          icon: '',
+        },
+        component: () => import('@/views/services/table/index'),
+      },
+      {
+        path: '/services/teacher',
+        name: name + 'teacher',
+        redirect: '/services/teacher/list',
+        meta: {
+          title: 'teacher',
+          icon: '',
+          hideChildrenInMenu: true,
+        },
+        component: RouteView,
+        children: [
+          {
+            path: '/services/teacher/list',
+            name: name + 'teacherlist',
+            meta: {
+              title: 'teacher',
+              icon: '',
+              // hideInMenu: true,
+            },
+            component: Teacher,
+          }
+        ]
+      },
     ],
   },
-]
-export default routes
+];
+export default routes;

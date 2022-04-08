@@ -3,9 +3,8 @@ import { useRoute, useRouter } from 'vue-router';
 import { useStore } from 'vuex';
 import { useI18n } from 'vue-i18n';
 import { xor } from 'lodash-es';
-import { genMenuInfo, filterMenu } from '@/utils/menu-util';
-import { routes } from '@/router';
-const sideWidth = 208;
+import { genMenuInfo } from '@/utils/menu-util';
+let sideWidth = 208;
 const collapsedWidth = 48;
 const firstSideWidth = 140; // for leftmenu-layout
 
@@ -19,12 +18,35 @@ const state = reactive({
 });
 let res = null; // 用 symbol 类型是最好的，但由于热更新会导致 symbol 更新，导致获取不到正确的 provide 值
 
+const clientWidth = ref();
+const watchClientWidth = () => {
+  window.onresize = () => {
+    return (clientWidth.value = document.body.clientWidth);
+  };
+  watch(
+    () => [clientWidth.value],
+    () => {
+      if (clientWidth.value < 1200) {
+        state.collapsed = true;
+      } else {
+        state.collapsed = false;
+      }
+      if (clientWidth.value > 1600) {
+        sideWidth = 208;
+      }
+    },
+  );
+};
+watchClientWidth();
+
 export const MenuStateSymbol = 'proGlobalMenuState';
 export const injectMenuState = () => {
   return inject(MenuStateSymbol, { ...toRefs(reactive({})) });
 };
 export default function useMenuState(initialState) {
-  const { t, locale } = useI18n();
+  // 210205 修改
+  // const { t, locale } = useI18n();
+  const { locale } = useI18n();
   const route = useRoute();
   const router = useRouter();
   const store = useStore();
@@ -34,10 +56,7 @@ export default function useMenuState(initialState) {
 
   const layoutState = reactive({
     layout: computed(() => (isMobile.value ? 'side' : store.getters['app/layout'])),
-    theme: computed(() => {
-      const navTheme = store.getters['app/navTheme'];
-      return navTheme === 'realDark' ? 'dark' : navTheme;
-    }),
+    theme: computed(() => store.getters['app/navTheme']),
     fixedSidebar: computed(() => store.getters['app/fixedSidebar']),
     fixedHeader: computed(() => store.getters['app/fixedHeader']),
     contentWidth: computed(() => store.getters['app/contentWidth']),
@@ -59,9 +78,11 @@ export default function useMenuState(initialState) {
     const width = layoutState.layout === 'left' ? firstSideWidth : sideWidth;
     return hasSideMenu.value ? (state.collapsed ? collapsedWidth : width) : undefined;
   });
-  const { menuKeyMap } = genMenuInfo(filterMenu(routes));
+
+  // const { menuKeyMap } = genMenuInfo(store.getters['user/allowRouters']);
 
   const getOpenKeysBySelectKey = key => {
+    const { menuKeyMap } = genMenuInfo(store.getters['user/allowRouters']);
     return menuKeyMap[key]?.parentKeys;
   };
 
@@ -121,7 +142,9 @@ export default function useMenuState(initialState) {
     breadcrumb.value = route.matched.concat().map(r => {
       return {
         path: r.path,
-        breadcrumbName: r.path === '/' ? t('pages.home') : t(`${r.meta.title}`),
+        // 210225 修改
+        // breadcrumbName: r.path === '/' ? t('pages.home') : t(`${r.meta.title}`),
+        breadcrumbName: r.path === '/' ? '首页' : `${r.meta.title}`,
       };
     });
   };
@@ -135,6 +158,13 @@ export default function useMenuState(initialState) {
   };
 
   onMounted(() => {
+    watch(isMobile, () => {
+      if (isMobile.value) {
+        state.collapsed = true;
+      } else {
+        state.collapsed = false;
+      }
+    });
     watch(
       () => route.path,
       () => {
@@ -156,7 +186,7 @@ export default function useMenuState(initialState) {
     hasSideMenu,
     isTopMenu,
     sideWidth: menuWidth,
-    secondSideWidth: ref(secondSideWidth),
+    secondSideWidth,
     breadcrumb,
     collapsedWidth,
     updateSelectKeys,

@@ -1,9 +1,11 @@
 <template>
   <a-layout-footer style="padding: 0">
     <div class="custom-render ant-pro-global-footer">
-      <div class="ant-pro-global-footer-links">
+      <div class="ant-pro-global-footer-links" v-if="false">
         <slot name="links">
-          <a href="https://www.antdv.com" target="_blank">Ant Design Vue</a>
+          <a href="https://www.antdv.com" target="_blank">
+            Ant Design Vue
+          </a>
           <a title="github" target="_blank" href="https://github.com/vueComponent/ant-design-vue">
             <span role="img" aria-label="github" class="anticon anticon-github">
               <svg
@@ -22,7 +24,7 @@
               </svg>
             </span>
           </a>
-          <a href="https://store.antdv.com/pro/" target="_blank">Buy Now!</a>
+          <a href="https://antdv.com/pro-admin/buy" target="_blank">Buy Now!</a>
         </slot>
       </div>
       <div class="ant-pro-global-footer-copyright">
@@ -44,7 +46,7 @@
               ></path>
             </svg>
           </span>
-          上海偲诺软件科技中心出品
+          清华大学五道口金融学院
         </slot>
       </div>
     </div>
