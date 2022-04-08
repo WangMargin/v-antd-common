@@ -28,7 +28,7 @@
                 v-model:value="formState.category"
                 show-search
                 placeholder="请选择"
-                style="width: 100%;"
+                style="width: 100%"
                 :options="allCategoryList"
                 @change="categoryChange"
               ></a-select>
@@ -60,7 +60,7 @@
                 v-model:value="formState.year"
                 show-search
                 placeholder="请选择"
-                style="width: 100%;"
+                style="width: 100%"
                 :options="allYearList"
                 @change="yearChange"
               ></a-select>
@@ -92,7 +92,7 @@
                 v-model:value="formState.task"
                 show-search
                 placeholder="请选择"
-                style="width: 100%;"
+                style="width: 100%"
                 :options="allTaskList.data"
               ></a-select>
             </a-form-item>
@@ -168,18 +168,16 @@
         </a-row>
       </a-form>
     </a-card>
-    <a-card :bordered="false" style="margin-top:12px;" v-if="!listState.loading">
-      <a-row type="flex" justify="end" style="margin-bottom:10px;">
-        <a-col style="flex: 1;">
-          <a-button type="link" style="padding: 0;">共计 {{ listState.total }} 条数据</a-button>
+    <a-card :bordered="false" style="margin-top: 12px" v-if="!listState.loading">
+      <a-row type="flex" justify="end" style="margin-bottom: 10px">
+        <a-col style="flex: 1">
+          <a-button type="link" style="padding: 0">共计 {{ listState.total }} 条数据</a-button>
         </a-col>
         <a-col>
           <a-dropdown :trigger="['click']">
             <template #overlay>
               <a-menu>
-                <a-menu-item @click="batchExportClick">
-                  批量导出
-                </a-menu-item>
+                <a-menu-item @click="batchExportClick">批量导出</a-menu-item>
                 <a-menu-item @click="batchExportClick('all')">导出全部数据</a-menu-item>
               </a-menu>
             </template>
@@ -193,7 +191,7 @@
           <a-button
             type="primary"
             @click="addSycamore"
-            style="margin-left:20px;"
+            style="margin-left: 20px"
             :disabled="savePermission ? false : true"
           >
             <plus-outlined />
@@ -202,9 +200,9 @@
         </a-col>
       </a-row>
 
-      <div style="height:1000px;">
+      <div style="height: 1000px">
         <ag-grid-vue
-          style="width: 100%; height: 100%;"
+          style="width: 100%; height: 100%"
           class="ag-theme-balham"
           :defaultColDef="defaultColDef"
           :gridOptions="gridOptions"
@@ -250,7 +248,13 @@
     ></examine-reject>
   </page-container>
   <!-- 数据加载中 loading -->
-  <a-modal :visible="formBtnLoading" :footer="null" :closable="false" centered :maskClosable="false">
+  <a-modal
+    :visible="formBtnLoading"
+    :footer="null"
+    :closable="false"
+    centered
+    :maskClosable="false"
+  >
     <div style="text-align: center">
       <a-spin size="large" />
       <p style="padding: 20px 0 0 0">加载中...</p>
@@ -499,7 +503,7 @@ export default defineComponent({
       overlayNoRowsTemplate: `<span class="ag-overlay-norows-center">暂无数据</span>`,
       gridOptions: {
         floatingFilter: true,
-        onCellDoubleClicked: function(res) {
+        onCellDoubleClicked: function (res) {
           Modal.info({
             centered: true,
             title: '查看详情',
@@ -626,11 +630,11 @@ export default defineComponent({
           }
           if (Object.keys(item.formatter).length > 0 && item.formatter.type) {
             if (item.formatter.type === 'Money') {
-              o.valueFormatter = function(k) {
+              o.valueFormatter = function (k) {
                 return k.data[item.key] ? moneyTransform(k.data[item.key]) : k.data[item.key];
               };
             } else {
-              o.cellRenderer = function(k) {
+              o.cellRenderer = function (k) {
                 return k.data[item.key]
                   ? dataFormatterHandle(
                       k.data[item.key],

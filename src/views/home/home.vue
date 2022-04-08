@@ -13,10 +13,10 @@
       <admin v-if="subjectInfo.type.key === 'Admin' && !state.loading" :data="state.info"></admin>
     </a-card>
     <template v-if="taskIsShow">
-      <a-card :bordered="false" style="margin-top:14px">
+      <a-card :bordered="false" style="margin-top: 14px">
         <template #title>
           统计任务
-          <em style="font-size: 12px;color: rgba(0, 0, 0, 0.45);font-style:normal;">
+          <em style="font-size: 12px; color: rgba(0, 0, 0, 0.45); font-style: normal">
             请按照要求完成科研项目的填报并提交审核
           </em>
         </template>
@@ -37,10 +37,10 @@
         :loading="state.loading"
         title="成果填报"
         :bordered="false"
-        style="margin-top:14px;"
+        style="margin-top: 14px"
         :body-style="{ padding: '0' }"
       >
-        <a-tabs :animated="false" style="padding: 0;" :tabBarStyle="{ marginBottom: '0' }">
+        <a-tabs :animated="false" style="padding: 0" :tabBarStyle="{ marginBottom: '0' }">
           <a-tab-pane
             v-for="card in state.category_list"
             :key="`${card.key}`"
@@ -50,7 +50,7 @@
               <a-card-grid
                 v-for="l in card.list"
                 :key="l.key"
-                style="padding: 10px;"
+                style="padding: 10px"
                 class="project-card-grid"
               >
                 <a-card class="typography-card" :bordered="false" :body-style="{ padding: '10px' }">
@@ -65,7 +65,7 @@
                             {{ l.simple_name }}
                           </a-avatar>
                         </span>
-                        <span style="padding:0 5px;" class="line-1">{{ l.name }}</span>
+                        <span style="padding: 0 5px" class="line-1">{{ l.name }}</span>
                         <span>
                           <a-popover placement="topRight" :overlayStyle="{ width: '300px' }">
                             <template #content>
@@ -76,7 +76,7 @@
                                 <b>{{ l.name }}</b>
                               </span>
                             </template>
-                            <InfoCircleOutlined style="color:#999" />
+                            <InfoCircleOutlined style="color: #999" />
                           </a-popover>
                         </span>
                       </div>
@@ -107,7 +107,7 @@
         </a-tabs>
       </a-card>
     </template>
-    <a-card :loading="state.loading" :bordered="false" style="margin-top:14px;">
+    <a-card :loading="state.loading" :bordered="false" style="margin-top: 14px">
       <statistics-chart
         v-if="!state.loading"
         :year="state.year"
@@ -244,10 +244,10 @@ export default defineComponent({
   line-height: 20px;
 
   span {
-    cursor: pointer;
-    color: rgba(0, 0, 0, 0.45);
     display: inline-block;
     flex: 1 1 0;
+    color: rgba(0, 0, 0, 0.45);
+    cursor: pointer;
 
     &:hover {
       color: #bb133e;
@@ -255,18 +255,18 @@ export default defineComponent({
   }
   .datetime {
     flex: 0 0 auto;
-    height: 18px;
-    line-height: 16px;
     float: right;
+    height: 18px;
     font-size: 12px;
+    line-height: 16px;
   }
 }
 .card-title {
   display: flex;
   align-items: center;
   span:nth-child(2) {
-    flex: auto;
     display: inline-block;
+    flex: auto;
     margin: 0 5px;
   }
 }

@@ -4,8 +4,12 @@ import store from './store';
 import locale from './locales';
 import App from './App.vue';
 import {
+  Skeleton,
+  Tree,
+  Pagination,
   Layout,
   Menu,
+  Cascader,
   Row,
   Col,
   Card,
@@ -14,6 +18,7 @@ import {
   Select,
   Button,
   Checkbox,
+  Upload,
   Tabs,
   Tag,
   Input,
@@ -41,6 +46,11 @@ import {
   Empty,
   Spin,
   Drawer,
+  TreeSelect,
+  InputNumber,
+  Collapse,
+  Badge,
+  // Typography,
 } from 'ant-design-vue';
 import { ProProvider, PageContainer, TransformVnode } from '@/components';
 import { useIcons } from '@/icons';
@@ -52,6 +62,10 @@ app
   .use(router)
   .use(locale)
   .use(store)
+  .use(Badge)
+  .use(Skeleton)
+  .use(Upload)
+  .use(Cascader)
   .use(Layout)
   .use(Menu)
   .use(Row)
@@ -63,6 +77,7 @@ app
   .use(Button)
   .use(Checkbox)
   .use(Tabs)
+  .use(Pagination)
   .use(Tag)
   .use(Input)
   .use(DatePicker)
@@ -89,6 +104,11 @@ app
   .use(Empty)
   .use(Spin)
   .use(Drawer)
+  .use(TreeSelect)
+  .use(Tree)
+  .use(InputNumber)
+  .use(Collapse)
+  // .use(Typography)
   .use(ProProvider)
   .component(PageContainer.name, PageContainer)
   .component(TransformVnode.name, TransformVnode)

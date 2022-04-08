@@ -16,13 +16,13 @@
     <a-col :xs="24" :sm="24" :md="12" :lg="12">
       <a-row :gutter="10" align="middle" justify="end">
         <a-col :xs="12" :sm="12" :md="8" :lg="6" :xl="5">
-          <a-statistic title="累计成果" :value="data.item_all_count" style="text-align:center;" />
+          <a-statistic title="累计成果" :value="data.item_all_count" style="text-align: center" />
         </a-col>
         <a-col :xs="12" :sm="12" :md="8" :lg="6" :xl="5">
           <a-statistic
             title="本年度成果"
             :value="data.item_this_year_count"
-            style="text-align:center;"
+            style="text-align: center"
           />
         </a-col>
         <!-- <a-statistic title="团队成员" :value="data.operator_count" style="text-align:center;" /> -->
@@ -53,17 +53,17 @@ export default defineComponent({
 <style lang="less" scoped>
 .summary {
   .name {
+    margin: 0;
+    padding: 0;
     font-size: 24px;
     line-height: 28px;
-    margin: 0;
-    padding: 0;
   }
   .desc {
-    font-size: 12px;
-    line-height: 20px;
-    color: rgba(0, 0, 0, 0.6);
     margin: 0;
     padding: 0;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    line-height: 20px;
   }
 }
 </style>

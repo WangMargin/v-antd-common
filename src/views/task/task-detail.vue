@@ -20,7 +20,7 @@
           <template v-if="!state.loading && isAdmin">
             <a-tree-select
               show-search
-              style="min-width: 180px;margin-right:20px;"
+              style="min-width: 180px; margin-right: 20px"
               :dropdown-style="{ maxHeight: '240px', overflow: 'auto' }"
               placeholder="选择主体"
               allow-clear
@@ -34,14 +34,12 @@
         </a-col>
       </a-row>
     </a-card>
-    <a-card :loading="state.loading" :bordered="false" title="任务信息" style="margin-top:14px;">
+    <a-card :loading="state.loading" :bordered="false" title="任务信息" style="margin-top: 14px">
       <template #extra v-if="!state.loading">
         <template v-if="isAdmin">
-          <a-button type="primary" @click="taskStatusChange">
-            修改状态
-          </a-button>
+          <a-button type="primary" @click="taskStatusChange">修改状态</a-button>
           <template v-if="state.info.status.key === 'Complete'">
-            <a-button type="primary" @click="taskFileClick" style="margin-left:20px;">
+            <a-button type="primary" @click="taskFileClick" style="margin-left: 20px">
               归档
             </a-button>
           </template>
@@ -63,14 +61,10 @@
             >
               撤回提交
             </a-button>
-            <a-button type="primary" @click="taskStatusChange" v-else>
-              修改状态
-            </a-button>
+            <a-button type="primary" @click="taskStatusChange" v-else>修改状态</a-button>
           </template>
           <template v-else>
-            <a-button type="primary" disabled>
-              修改状态
-            </a-button>
+            <a-button type="primary" disabled>修改状态</a-button>
           </template>
         </template>
       </template>
@@ -122,8 +116,8 @@
         </template>
       </a-row>
     </a-card>
-    <a-card :loading="state.loading" :bordered="false" style="margin-top:14px;">
-      <a-tabs :animated="false" style="margin-top:-14px;" v-if="!state.loading">
+    <a-card :loading="state.loading" :bordered="false" style="margin-top: 14px">
+      <a-tabs :animated="false" style="margin-top: -14px" v-if="!state.loading">
         <a-tab-pane key="sycamore" tab="科研成果数据">
           <achievements
             :task-id="state.taskId"
@@ -348,9 +342,9 @@ export default defineComponent({
     margin-bottom: 0;
   }
   .txt {
+    color: @text-color-secondary;
     font-size: 12px;
     line-height: 22px;
-    color: @text-color-secondary;
   }
 }
 </style>

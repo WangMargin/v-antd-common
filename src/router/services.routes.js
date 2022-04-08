@@ -1,6 +1,5 @@
 import Layout from '@/layouts/index.vue'; // import UserLayout from '@/layouts/user-layout.vue';
 import RouteView from '@/layouts/route-view.vue';
-import Teacher from '@/views/services/teacher/index';
 const name = 'services';
 const routes = [
   {
@@ -9,12 +8,14 @@ const routes = [
     redirect: '/',
     component: Layout,
     children: [
+      // 首页
       {
         path: '/services',
         name: name + 'index',
         meta: {
           title: '首页',
           icon: '',
+          hideChildrenInMenu: true,
         },
         component: RouteView,
         redirect: '/services/home',
@@ -29,15 +30,92 @@ const routes = [
           },
         ],
       },
+      // 任务管理
       {
-        path: '/services/table',
-        name: name + 'table',
+        path: '/services/TaskManagement',
+        name: name + 'TaskManagement',
         meta: {
-          title: '表各',
+          title: '任务管理',
+          icon: '',
+          hideChildrenInMenu: true,
+        },
+        component: RouteView,
+        redirect: '/services/TaskManagement/index',
+        children: [
+          {
+            path: '/services/TaskManagement/index',
+            name: name + 'TaskHome',
+            meta: {
+              title: '任务管理',
+            },
+            component: () => import('@/views/services/TaskManagement/index'),
+          },
+          {
+            path: '/services/TaskManagement/add',
+            name: name + 'addTask',
+            meta: {
+              title: '新建任务',
+            },
+            component: () => import('@/views/services/TaskManagement/Add/index'),
+          },
+        ],
+      },
+      // 公共服务统计
+      {
+        path: '/services/statistic',
+        name: name + 'statistic',
+        meta: {
+          title: '公共服务统计',
           icon: '',
         },
-        component: () => import('@/views/services/table/index'),
+        component: RouteView,
+        // component: () => import('@/views/services/table/index'),
+        children: [
+          {
+            path: '/services/statistic/Management',
+            name: name + 'Management',
+            meta: {
+              title: '教师公共服务管理与统计',
+              icon: '',
+            },
+            component: () => import('@/views/services/statistic/Management/index'),
+          },
+          {
+            path: '/services/statistic/Detail',
+            name: name + 'ManagementDetail',
+            meta: {
+              title: '公共服务统计明细',
+              icon: '',
+            },
+            component: () => import('@/views/services/statistic/Detail/index'),
+          },
+        ],
       },
+      // 系统配置
+      {
+        path: '/services/system',
+        name: name + 'system',
+        meta: {
+          title: '系统配置',
+          icon: '',
+          // hideChildrenInMenu: true,
+          // hideInMenu: true,
+        },
+        component: RouteView,
+        children: [
+          {
+            path: '/services/system/teacher',
+            name: name + 'systemteacher',
+            meta: {
+              title: '教师',
+              icon: '',
+              // hideInMenu: true,
+            },
+            component: () => import('@/views/services/system/Teacher/index'),
+          },
+        ],
+      },
+      // 教师状态页面
       {
         path: '/services/teacher',
         name: name + 'teacher',
@@ -46,6 +124,7 @@ const routes = [
           title: 'teacher',
           icon: '',
           hideChildrenInMenu: true,
+          hideInMenu: true,
         },
         component: RouteView,
         children: [
@@ -57,9 +136,9 @@ const routes = [
               icon: '',
               // hideInMenu: true,
             },
-            component: Teacher,
-          }
-        ]
+            component: import('@/views/services/teacher/Teachers'),
+          },
+        ],
       },
     ],
   },

@@ -54,9 +54,7 @@
         <a @click="markChange(record)" class="operate" v-if="record.status.key === 'Audit'">
           标记完成
         </a>
-        <a class="operate disabled" v-else>
-          标记完成
-        </a>
+        <a class="operate disabled" v-else>标记完成</a>
       </template>
     </a-table>
   </div>
@@ -102,10 +100,7 @@ export default defineComponent({
           customRender: 'customRender',
         },
         onFilter: (value, record) =>
-          record.name
-            .toString()
-            .toLowerCase()
-            .includes(value.toLowerCase()),
+          record.name.toString().toLowerCase().includes(value.toLowerCase()),
         onFilterDropdownVisibleChange: visible => {
           if (visible) {
             setTimeout(() => {

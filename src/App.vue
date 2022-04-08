@@ -4,7 +4,7 @@
   </a-config-provider>
 </template>
 <script>
-import { computed, provide, watch } from 'vue';
+import { computed, provide, watch, ref, reactive } from 'vue';
 import { useStore } from 'vuex';
 import { STORAGE_LANG_KEY } from '@/store/mutation-type';
 import { localStorage } from '@/utils/local-storage';
@@ -15,6 +15,20 @@ export default {
   name: 'App',
 
   setup() {
+    const state = reactive({
+      isTeacher: false,
+    });
+    const userFlag = ref('teacher');
+    setTimeout(() => {
+      userFlag.value = 'common';
+    }, 1000);
+    provide('userFlag', userFlag);
+    watch(
+      () => state.isTeacher,
+      () => {
+        console.log(state.isTeacher);
+      },
+    );
     const store = useStore();
     const i18n = useI18n();
     const colSize = useMediaQuery();
@@ -59,6 +73,8 @@ export default {
       return i18n.getLocaleMessage(i18n.locale.value).antd;
     });
     return {
+      userFlag,
+      state,
       locale,
     };
   },

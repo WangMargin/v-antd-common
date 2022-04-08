@@ -59,7 +59,7 @@
                   valueFormat="yyyy"
                   format="yyyy"
                   placeholder="请选择年份"
-                  style="width:100%;"
+                  style="width: 100%"
                 />
               </div>
             </a-form-item>
@@ -93,7 +93,7 @@
               <!--                @change="treeSelect"-->
               <!--              ></a-tree-select>-->
             </a-form-item>
-            <a-form-item class="error-infos" style="text-align:center;">
+            <a-form-item class="error-infos" style="text-align: center">
               <a-button
                 type="primary"
                 @click.prevent="onSubmit('Published')"
@@ -103,7 +103,7 @@
               </a-button>
               <a-button
                 type="primary"
-                style="margin-left: 10px;"
+                style="margin-left: 10px"
                 :disabled="isSubmitDisable"
                 @click.prevent="onSubmit('Draft')"
                 v-if="isDraft"

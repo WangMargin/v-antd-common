@@ -6,8 +6,8 @@
           <slot v-if="hasLogoSlot" name="logo" />
           <div v-else>
             <router-link :to="{ name: 'index' }">
-              <img src="@/assets/logo.png" alt="logo" />
-              <h1>Admin Pro</h1>
+              <img src="@/assets/logo.svg" alt="logo" />
+              <h1>教师公共服务</h1>
             </router-link>
           </div>
         </div>

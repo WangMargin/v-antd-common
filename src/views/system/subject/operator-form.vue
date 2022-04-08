@@ -17,7 +17,7 @@
     >
       <a-spin :spinning="loading">
         <a-divider :style="{ fontSize: '18px', height: '24px' }">{{ formInfo.title }}</a-divider>
-        <a-form :layout="formInfo.direction" style="margin-top:20px">
+        <a-form :layout="formInfo.direction" style="margin-top: 20px">
           <a-form-item label="姓名" :required="true" v-bind="validateInfos.uid">
             <a-tree-select
               v-model:value="modelRef.uid"
@@ -266,9 +266,9 @@ export default defineComponent({
   padding-bottom: 0;
 }
 .subject-modal-form ::v-deep(.ant-modal-footer) {
-  border-top: 0 none;
   padding: 10px 16px 20px;
   text-align: center;
+  border-top: 0 none;
 }
 .subject-modal-form ::v-deep(.ant-modal-footer .ant-btn-primary) {
   margin-left: 40px;

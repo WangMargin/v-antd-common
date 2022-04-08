@@ -67,7 +67,7 @@ module.exports = {
     },
   },
   devServer: {
-    port: 8000,
+    port: 8080,
     // mock serve
     before: app => {
       if (process.env.MOCK !== 'none' && process.env.HTTP_MOCK !== 'none') {

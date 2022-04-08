@@ -3,14 +3,14 @@
     <template v-for="info in subjectInfoData" :key="info.key">
       <a-descriptions-item :span="info.column">
         <template #label>
-          <div style="width:100px;">{{ info.label }}</div>
+          <div style="width: 100px">{{ info.label }}</div>
         </template>
         <template v-if="info.value">
           <template v-if="info.key === 'web_url'">
             <a :href="info.value" target="_blank">{{ info.value }}</a>
           </template>
           <template v-else-if="info.key === 'summary'">
-            <div style="white-space: pre-line;">{{ info.value }}</div>
+            <div style="white-space: pre-line">{{ info.value }}</div>
           </template>
           <template v-else>{{ info.value }}</template>
         </template>
@@ -18,7 +18,7 @@
       </a-descriptions-item>
     </template>
   </a-descriptions>
-  <div class="edit-button" style="margin-top:20px;">
+  <div class="edit-button" style="margin-top: 20px">
     <a-button type="primary" @click="editFormShow">编辑</a-button>
   </div>
   <info-form

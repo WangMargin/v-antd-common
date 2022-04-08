@@ -23,7 +23,7 @@
         <close-outlined :style="{ fontSize: '20px', color: '#FFFFFF' }" />
       </a>
       <a-card :bordered="false" :body-style="{ padding: '0' }" v-if="!loading">
-        <div style="padding:18px 24px;">
+        <div style="padding: 18px 24px">
           <a-descriptions title="基础信息" layout="vertical">
             <a-descriptions-item>
               <template #label>
@@ -53,11 +53,14 @@
           <a-steps
             :current="detailInfo.currentStatusIndex"
             :status="detailInfo.stepStatus"
-            style="margin-top:20px;"
+            style="margin-top: 20px"
           >
             <a-step title="创建">
               <template #description>
-                <span v-if="detailInfo.currentStatus === 'Draft'" style="color:rgba(0,0,0,.45);">
+                <span
+                  v-if="detailInfo.currentStatus === 'Draft'"
+                  style="color: rgba(0, 0, 0, 0.45)"
+                >
                   草稿
                 </span>
               </template>
@@ -67,9 +70,9 @@
                 <span
                   v-if="
                     detailInfo.currentStatus === 'Published' ||
-                      detailInfo.currentStatus === 'Failed'
+                    detailInfo.currentStatus === 'Failed'
                   "
-                  style="color:rgba(0,0,0,.45);"
+                  style="color: rgba(0, 0, 0, 0.45)"
                 >
                   编辑中
                 </span>
@@ -77,19 +80,25 @@
             </a-step>
             <a-step title="审核">
               <template #description>
-                <span v-if="detailInfo.currentStatus === 'Auditing'" style="color:rgba(0,0,0,.45);">
+                <span
+                  v-if="detailInfo.currentStatus === 'Auditing'"
+                  style="color: rgba(0, 0, 0, 0.45)"
+                >
                   审核中
                 </span>
-                <span v-if="detailInfo.currentStatus === 'Archived'" style="color:rgba(0,0,0,.45);">
+                <span
+                  v-if="detailInfo.currentStatus === 'Archived'"
+                  style="color: rgba(0, 0, 0, 0.45)"
+                >
                   已通过
                 </span>
-                <span v-if="detailInfo.currentStatus === 'Failed'" style="color: #BB133E;">
+                <span v-if="detailInfo.currentStatus === 'Failed'" style="color: #bb133e">
                   已退回
                 </span>
               </template>
             </a-step>
           </a-steps>
-          <div v-if="savePermission && !isFiled" style="margin-top:20px;">
+          <div v-if="savePermission && !isFiled" style="margin-top: 20px">
             <a-button
               type="primary"
               @click="editClick"
@@ -107,7 +116,7 @@
             </a-button>
           </div>
         </div>
-        <div style="padding:18px 24px;border-top:15px solid #E9E9E9;">
+        <div style="padding: 18px 24px; border-top: 15px solid #e9e9e9">
           <a-descriptions
             layout="vertical"
             :bordered="false"
@@ -117,7 +126,7 @@
             :labelStyle="{ background: '#ffffff' }"
           >
             <template v-for="(data, index) in detailInfo.data_info" :key="index">
-              <a-descriptions-item :span="data.scene_layout.column" style="width:50%">
+              <a-descriptions-item :span="data.scene_layout.column" style="width: 50%">
                 <template #label>
                   <span class="font-weight-200">{{ data.label }}</span>
                 </template>
@@ -128,17 +137,17 @@
                       bordered
                       :column="2"
                       size="small"
-                      style="margin:0 -12px;"
+                      style="margin: 0 -12px"
                     >
                       <template v-for="(val, k) in data.value" :key="k">
                         <a-descriptions-item
                           :label="val.label"
                           :span="val.scene_layout.column"
-                          style="width:50%"
+                          style="width: 50%"
                         >
                           <template v-if="val.value">
                             <div
-                              style="white-space: pre-line;width:280px;"
+                              style="white-space: pre-line; width: 280px"
                               v-html="val.value"
                             ></div>
                           </template>
@@ -148,7 +157,7 @@
                     </a-descriptions>
                   </template>
                   <template v-else>
-                    <div style="white-space: pre-line;width:330px;" v-html="data.value"></div>
+                    <div style="white-space: pre-line; width: 330px" v-html="data.value"></div>
                   </template>
                 </template>
                 <template v-else>-</template>
@@ -157,10 +166,10 @@
           </a-descriptions>
         </div>
         <div
-          style="padding:0 24px 18px;border-top:15px solid #E9E9E9;"
+          style="padding: 0 24px 18px; border-top: 15px solid #e9e9e9"
           v-if="
             detailInfo.log.length > 0 ||
-              (permission === 'admin' && detailInfo.currentStatus === 'Auditing')
+            (permission === 'admin' && detailInfo.currentStatus === 'Auditing')
           "
         >
           <a-card
@@ -177,10 +186,10 @@
               size="middle"
               :pagination="false"
             >
-              <template #remark="{ text,record }">
+              <template #remark="{ text, record }">
                 <template v-if="record.type.key === 'Update' || record.type.key === 'UpdateDraft'">
                   <div
-                    style="white-space: pre-line;width:280px;"
+                    style="white-space: pre-line; width: 280px"
                     v-for="(diff, index) in record.update_data_desc"
                     :key="index"
                   >
@@ -188,14 +197,14 @@
                   </div>
                 </template>
                 <template v-else>
-                  <div style="white-space: pre-line;width:280px;" v-if="text">{{ text }}</div>
+                  <div style="white-space: pre-line; width: 280px" v-if="text">{{ text }}</div>
                   <span v-else>-</span>
                 </template>
               </template>
             </a-table>
           </a-card>
           <div
-            style="margin-top:20px;"
+            style="margin-top: 20px"
             v-if="permission === 'admin' && detailInfo.currentStatus === 'Auditing' && !isFiled"
           >
             <a-button
@@ -466,24 +475,24 @@ export default defineComponent({
   box-shadow: 0 0 0 transparent;
 }
 .sycamore-detail-wrapper ::v-deep(.ant-drawer-content) {
-  background-color: transparent;
   padding-left: 30px;
+  background-color: transparent;
 }
 .sycamore-detail-wrapper .close {
   position: absolute;
-  left: 0;
   top: 80px;
+  left: 0;
   width: 30px;
   height: 30px;
-  background: #bb133e;
   padding: 5px;
+  background: #bb133e;
 }
 .font-weight-200 {
-  font-weight: 200;
   color: #999999;
+  font-weight: 200;
 }
 .font-weight-400 {
-  font-weight: 500;
   color: #000000;
+  font-weight: 500;
 }
 </style>

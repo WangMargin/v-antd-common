@@ -19,25 +19,23 @@
           </template>
         </a-col>
         <a-col>
-          <a-button @click="checkSubmit" type="primary" style="margin:0 10px;">查重</a-button>
+          <a-button @click="checkSubmit" type="primary" style="margin: 0 10px">查重</a-button>
           <template v-if="source === 'submit'">
             <a-button
               @click="submitOk"
               type="primary"
-              style="margin:0 10px;"
+              style="margin: 0 10px"
               :loading="submitLoading"
             >
               确认
             </a-button>
           </template>
           <template v-else>
-            <a-button @click="clickOk" type="primary" style="margin:0 10px;">
-              确认
-            </a-button>
+            <a-button @click="clickOk" type="primary" style="margin: 0 10px">确认</a-button>
           </template>
         </a-col>
       </a-row>
-      <div style="max-height:260px;overflow-y:auto;margin-top:20px;">
+      <div style="max-height: 260px; overflow-y: auto; margin-top: 20px">
         <a-list
           item-layout="horizontal"
           :loading="state.loading"
@@ -61,7 +59,7 @@
                     <span
                       v-if="
                         !item.data.created_by.subject ||
-                          subject.id !== item.data.created_by.subject.id
+                        subject.id !== item.data.created_by.subject.id
                       "
                     >
                       ; {{ subject.name }}
@@ -72,19 +70,19 @@
               <template #extra>
                 <div class="duplicate-right">
                   <a-space align="center">
-                    <div class="list-content-item" style="width:120px;">
+                    <div class="list-content-item" style="width: 120px">
                       <span>统计项目</span>
                       <p :title="`${item.data.category.name}`">{{ item.data.category.name }}</p>
                     </div>
-                    <div class="list-content-item" style="width:60px;">
+                    <div class="list-content-item" style="width: 60px">
                       <span>状态</span>
                       <p>{{ item.data.status.value }}</p>
                     </div>
-                    <div class="list-content-item" style="width:60px;">
+                    <div class="list-content-item" style="width: 60px">
                       <span>相似度</span>
                       <p>{{ item.percentage }}</p>
                     </div>
-                    <div class="list-content-item" style="width:72px;">
+                    <div class="list-content-item" style="width: 72px">
                       <a-button
                         type="link"
                         size="small"
@@ -109,11 +107,11 @@
           </template>
         </a-list>
       </div>
-      <a-space align="start" :size="10" style="margin-top:20px;">
+      <a-space align="start" :size="10" style="margin-top: 20px">
         <exclamation-circle-filled
           :style="{ color: '#BB133E', fontSize: '16px' }"
         ></exclamation-circle-filled>
-        <p style="color:rgba(0,0,0,.45);">
+        <p style="color: rgba(0, 0, 0, 0.45)">
           提示：
           <br />
           1. 请点击“查重”按钮，查询系统中是否存在重复的成果。
@@ -337,16 +335,16 @@ export default defineComponent({
     font-size: @font-size-base;
     vertical-align: middle;
     > span {
-      line-height: 20px;
       color: @text-color-secondary;
+      line-height: 20px;
     }
     > p {
-      margin-bottom: 0;
-      line-height: 22px;
       height: 22px;
+      margin-bottom: 0;
       overflow: hidden;
-      text-overflow: ellipsis;
+      line-height: 22px;
       white-space: nowrap;
+      text-overflow: ellipsis;
     }
   }
 }

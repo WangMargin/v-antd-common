@@ -1,5 +1,5 @@
 <template>
-  <div style="width:100%;overflow-x: auto">
+  <div style="width: 100%; overflow-x: auto">
     <a-list
       class="task-list"
       :loading="state.loading"
@@ -50,17 +50,13 @@
                   修改状态
                 </a-button>
               </template>
-              <a-button type="primary" disabled v-else size="small">
-                修改状态
-              </a-button>
+              <a-button type="primary" disabled v-else size="small">修改状态</a-button>
             </template>
           </template>
           <a-list-item-meta
-            :description="
-              `${moment(item.begin_date).format('YYYY年MM月DD日')} - ${moment(item.end_date).format(
-                'YYYY年MM月DD日',
-              )}`
-            "
+            :description="`${moment(item.begin_date).format('YYYY年MM月DD日')} - ${moment(
+              item.end_date,
+            ).format('YYYY年MM月DD日')}`"
           >
             <template #title>
               <a @click="detailClick(item)">{{ item.name }}</a>
@@ -271,8 +267,8 @@ export default defineComponent({
       }
       > p {
         margin-bottom: 0;
-        line-height: 22px;
         color: @text-color-secondary;
+        line-height: 22px;
       }
     }
   }

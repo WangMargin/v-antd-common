@@ -36,15 +36,13 @@
             <template #icon><search-outlined /></template>
             搜索
           </a-button>
-          <a-button size="small" style="width: 90px" @click="clearFilters()">
-            重置
-          </a-button>
+          <a-button size="small" style="width: 90px" @click="clearFilters()">重置</a-button>
         </div>
       </template>
       <template #filterIcon>
         <search-outlined />
       </template>
-      <template #subjects="{text}">
+      <template #subjects="{ text }">
         <template v-for="(subject, index) in text" :key="subject.id">
           <span v-if="index < text.length - 1">{{ subject.name }},</span>
           <span v-else>{{ subject.name }}</span>

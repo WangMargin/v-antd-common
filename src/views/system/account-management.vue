@@ -152,9 +152,7 @@
                   <template #icon><search-outlined /></template>
                   搜索
                 </a-button>
-                <a-button size="small" style="width: 90px" @click="clearFilters()">
-                  重置
-                </a-button>
+                <a-button size="small" style="width: 90px" @click="clearFilters()">重置</a-button>
               </div>
             </template>
             <template #filterIcon>

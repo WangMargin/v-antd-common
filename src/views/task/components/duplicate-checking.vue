@@ -14,7 +14,7 @@
             <div>
               {{ state.summary.name }}
             </div>
-            <div style="color:rgba(0,0,0,.45);">
+            <div style="color: rgba(0, 0, 0, 0.45)">
               <template v-if="source === 'achievement'">
                 <span>{{ state.createSubject }}</span>
                 <template v-for="(subject, idx) in state.relationSubject" :key="idx">
@@ -32,7 +32,7 @@
                   <span
                     v-if="
                       !state.summary.created_by.subject ||
-                        subject.id !== state.summary.created_by.subject.id
+                      subject.id !== state.summary.created_by.subject.id
                     "
                   >
                     ; {{ subject.name }}
@@ -42,8 +42,8 @@
             </div>
           </a-col>
           <a-col>
-            <div style="margin-right:20px;">
-              <span style="color:rgba(0,0,0,.45);display:block;">统计项目</span>
+            <div style="margin-right: 20px">
+              <span style="color: rgba(0, 0, 0, 0.45); display: block">统计项目</span>
               <template v-if="source === 'achievement'">
                 {{ categoryTitle }}
               </template>
@@ -53,28 +53,28 @@
             </div>
           </a-col>
           <a-col>
-            <div style="margin-right:20px;">
-              <span style="color:rgba(0,0,0,.45);display:block;">状态</span>
+            <div style="margin-right: 20px">
+              <span style="color: rgba(0, 0, 0, 0.45); display: block">状态</span>
               {{ state.summary.status.value }}
             </div>
           </a-col>
         </a-row>
       </a-card>
       <a-divider />
-      <a-row type="flex" style="margin-bottom:24px;">
+      <a-row type="flex" style="margin-bottom: 24px">
         <a-col flex="auto"></a-col>
         <a-col>
           <a-button
             type="primary"
             ghost
-            style="margin-right:20px;"
+            style="margin-right: 20px"
             @click="viewDetailsClick(state.summary)"
           >
             详情
           </a-button>
           <a-button
             type="primary"
-            style="margin-right:20px;"
+            style="margin-right: 20px"
             @click="viewDetailsExamineClick('Archived', state.summary.id)"
           >
             通过
@@ -82,7 +82,7 @@
           <a-button
             type="primary"
             ghost
-            style="margin-right:20px;"
+            style="margin-right: 20px"
             @click="viewDetailsExamineClick('Del', state.summary.id)"
           >
             删除
@@ -90,7 +90,7 @@
           <a-button
             type="primary"
             ghost
-            style="margin-right:20px;"
+            style="margin-right: 20px"
             @click="viewDetailsExamineClick('Failed', state.summary.id)"
           >
             驳回
@@ -103,7 +103,7 @@
         :body-style="{ padding: '24px 24px 0 24px' }"
         :head-style="{ borderTop: '15px solid #E9E9E9' }"
       >
-        <div style="max-height:260px;overflow-y:auto;">
+        <div style="max-height: 260px; overflow-y: auto">
           <a-list
             item-layout="horizontal"
             :loading="state.loading"
@@ -133,19 +133,19 @@
                 <template #extra>
                   <div class="duplicate-right">
                     <a-space align="center">
-                      <div class="list-content-item" style="width:120px;">
+                      <div class="list-content-item" style="width: 120px">
                         <span>统计项目</span>
                         <p :title="`${item.data.category.name}`">{{ item.data.category.name }}</p>
                       </div>
-                      <div class="list-content-item" style="width:60px;">
+                      <div class="list-content-item" style="width: 60px">
                         <span>状态</span>
                         <p>{{ item.data.status.value }}</p>
                       </div>
-                      <div class="list-content-item" style="width:60px;">
+                      <div class="list-content-item" style="width: 60px">
                         <span>相似度</span>
                         <p>{{ item.percentage }}</p>
                       </div>
-                      <div class="list-content-item" style="width:72px;">
+                      <div class="list-content-item" style="width: 72px">
                         <a-button
                           type="link"
                           size="small"
@@ -203,11 +203,11 @@
             </template>
           </a-list>
         </div>
-        <a-space align="start" :size="10" style="margin-top:20px;">
+        <a-space align="start" :size="10" style="margin-top: 20px">
           <exclamation-circle-filled
             :style="{ color: '#BB133E', fontSize: '16px' }"
           ></exclamation-circle-filled>
-          <p style="color:rgba(0,0,0,.45);">
+          <p style="color: rgba(0, 0, 0, 0.45)">
             提示：
             <br />
             1.
@@ -434,16 +434,16 @@ export default defineComponent({
     font-size: @font-size-base;
     vertical-align: middle;
     > span {
-      line-height: 20px;
       color: @text-color-secondary;
+      line-height: 20px;
     }
     > p {
-      margin-bottom: 0;
-      line-height: 22px;
       height: 22px;
+      margin-bottom: 0;
       overflow: hidden;
-      text-overflow: ellipsis;
+      line-height: 22px;
       white-space: nowrap;
+      text-overflow: ellipsis;
     }
   }
 }

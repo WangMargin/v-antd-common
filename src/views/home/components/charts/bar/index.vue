@@ -58,7 +58,7 @@ export default defineComponent({
           label: {
             show: true,
             position: 'insideRight',
-            formatter: function(v) {
+            formatter: function (v) {
               let val = v.value;
               if (val > 0) {
                 val = val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');

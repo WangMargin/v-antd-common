@@ -12,7 +12,7 @@
       <template v-if="item.component.type && item.component.type.key">
         <template v-if="item.component.type.key === 'Cascader' && data_source">
           <a-cascader
-            style="width:100%;"
+            style="width: 100%"
             v-model:value="defaultValue"
             :options="data_source.list"
             :display-render="displayRender"
@@ -44,7 +44,7 @@
           <div @click="openFn">
             <template v-if="item.component.parameter.formatter === 'YYYY'">
               <a-date-picker
-                style="width:100%;"
+                style="width: 100%"
                 mode="year"
                 :open="isOpen"
                 @panelChange="changeYearDate"
@@ -58,7 +58,7 @@
             </template>
             <template v-else-if="item.component.parameter.formatter.length == 7">
               <a-month-picker
-                style="width:100%;"
+                style="width: 100%"
                 mode="month"
                 :open="isOpen"
                 @panelChange="changeYearDate"
@@ -73,7 +73,7 @@
             </template>
             <template v-else>
               <a-date-picker
-                style="width:100%;"
+                style="width: 100%"
                 @change="changeDate"
                 v-model:value="defaultValue"
                 :format="item.component.parameter.formatter"
@@ -89,7 +89,7 @@
           <div @click="openFn">
             <template v-if="item.component.parameter.formatter === 'YYYY'">
               <a-range-picker
-                style="width:100%;"
+                style="width: 100%"
                 :mode="rangeYearMode"
                 :open="isOpen"
                 @panelChange="changeRangeYearDate"
@@ -101,7 +101,7 @@
             </template>
             <template v-else-if="item.component.parameter.formatter.length == 7">
               <a-range-picker
-                style="width:100%;"
+                style="width: 100%"
                 :mode="rangeMonthMode"
                 :open="isOpen"
                 @panelChange="changeRangeMonthDate"
@@ -113,7 +113,7 @@
             </template>
             <template v-else>
               <a-range-picker
-                style="width:100%;"
+                style="width: 100%"
                 @change="changeRangeDate"
                 v-model:value="defaultValue"
                 :format="item.component.parameter.formatter"
@@ -136,7 +136,7 @@
           />
           <a-button
             type="primary"
-            style="margin-left:10px;flex:none;"
+            style="margin-left: 10px; flex: none"
             v-if="item.duplicate_check === 1"
             @click="showDuplicateCheckModal"
           >
@@ -145,7 +145,7 @@
         </template>
         <template v-if="item.component.type.key === 'InputNumber'">
           <a-input-number
-            style="width:100%;"
+            style="width: 100%"
             @change="changeInputNumber"
             v-model:value="defaultValue"
             v-show="item.component.attribute.visible === 0 ? false : true"
@@ -378,7 +378,7 @@
               <inbox-outlined></inbox-outlined>
             </p>
             <p class="ant-upload-text">{{ item.component.attribute.placeholder }}</p>
-            <p class="ant-upload-text" style="font-size:10px;color:#999">
+            <p class="ant-upload-text" style="font-size: 10px; color: #999">
               请上传{{ item.component.parameter.type }}格式的文件，文件不能小于
               {{ item.component.parameter.min_size }}KB，大于{{
                 item.component.parameter.max_size / 1024
@@ -400,7 +400,7 @@
               <inbox-outlined></inbox-outlined>
             </p>
             <p class="ant-upload-text">{{ item.component.attribute.placeholder }}</p>
-            <p class="ant-upload-text" style="font-size:10px;color:#999">
+            <p class="ant-upload-text" style="font-size: 10px; color: #999">
               请上传{{ item.component.parameter.type }}格式的文件，文件不能小于
               {{ item.component.parameter.min_size }}KB，大于{{
                 item.component.parameter.max_size / 1024
@@ -417,7 +417,7 @@
       :title="item.label + '输入'"
     >
       <a-select
-        style="display:block; margin-bottom:15px"
+        style="display: block; margin-bottom: 15px"
         mode="tags"
         :dropdownMatchSelectWidth="false"
         :placeholder="'请输入' + item.label"
@@ -435,7 +435,7 @@
         :data-source="linkToSubjectColumnsData"
         :pagination="false"
       >
-        <template #isInner="{ record,text }">
+        <template #isInner="{ record, text }">
           <a-radio-group
             v-model:value="record.linkToSubjectValue"
             @change="
@@ -2267,11 +2267,11 @@ export default defineComponent({
     margin-bottom: 0;
   }
   display: flex;
-  margin-top: 15px;
-  justify-content: flex-start;
   align-items: flex-start;
-  font-size: 12px;
+  justify-content: flex-start;
+  margin-top: 15px;
   color: #888;
+  font-size: 12px;
   line-height: 18px;
 }
 .dynamic-box ::v-deep(.ant-form-item) {
@@ -2283,8 +2283,8 @@ export default defineComponent({
       margin-left: 15px;
     }
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
   }
   margin-bottom: 8px;
 }

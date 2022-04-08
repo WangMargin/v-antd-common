@@ -11,9 +11,7 @@
               <a-dropdown v-if="savePermission" :trigger="['click']">
                 <template #overlay>
                   <a-menu>
-                    <a-menu-item @click="importConfirm">
-                      导入数据
-                    </a-menu-item>
+                    <a-menu-item @click="importConfirm">导入数据</a-menu-item>
                     <a-menu-item @click="batchExportTemplateClick">下载模板</a-menu-item>
                   </a-menu>
                 </template>
@@ -187,25 +185,21 @@
                 <template #icon><search-outlined /></template>
                 搜索
               </a-button>
-              <a-button size="small" style="width: 90px" @click="clearFilters()">
-                重置
-              </a-button>
+              <a-button size="small" style="width: 90px" @click="clearFilters()">重置</a-button>
             </div>
           </template>
           <template #filterIcon>
             <search-outlined />
           </template>
-          <template #name="{text}">
+          <template #name="{ text }">
             <span
               :title="text"
-              :style="
-                `display:block;overflow : hidden;text-overflow: ellipsis;white-space: nowrap;width:${tableInfo.nameWidth}px;`
-              "
+              :style="`display:block;overflow : hidden;text-overflow: ellipsis;white-space: nowrap;width:${tableInfo.nameWidth}px;`"
             >
               {{ text }}
             </span>
           </template>
-          <template #status="{text}">
+          <template #status="{ text }">
             {{ text.value }}
           </template>
           <template #action="{ record }">
@@ -296,7 +290,7 @@
         </p>
       </a-upload-dragger>
       <template #footer>
-        <a-button key="back" @click="handleCancel" style="margin-right:20px;">取消</a-button>
+        <a-button key="back" @click="handleCancel" style="margin-right: 20px">取消</a-button>
         <a-button type="primary" @click="batchExportTemplateClick">下载模板</a-button>
       </template>
     </a-modal>
@@ -473,11 +467,11 @@ export default defineComponent({
           }
           if (Object.keys(item.formatter).length > 0 && item.formatter.type) {
             if (item.formatter.type === 'Money') {
-              o.customRender = function({ text }) {
+              o.customRender = function ({ text }) {
                 return text ? moneyTransform(text) : text;
               };
             } else {
-              o.customRender = function({ text }) {
+              o.customRender = function ({ text }) {
                 return text
                   ? dataFormatterHandle(text, item.formatter.type, item.formatter.split_str)
                   : text;
@@ -958,22 +952,22 @@ export default defineComponent({
 <style lang="less" scoped>
 .importLoading {
   position: fixed;
-  left: 0;
   top: 0;
+  left: 0;
+  z-index: 99;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.45);
-  z-index: 99;
   .container {
     position: absolute;
-    left: 50%;
     top: 50%;
+    left: 50%;
     width: 200px;
-    background-color: #ffffff;
-    transform: translate(-50%, -50%);
-    text-align: center;
     padding: 40px 0;
+    text-align: center;
+    background-color: #ffffff;
     border-radius: 8px;
+    transform: translate(-50%, -50%);
   }
 }
 </style>

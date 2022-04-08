@@ -13,7 +13,7 @@
     <template #content>
       <template v-if="!loading">
         <div class="page-header-content">
-          <p style="white-space: pre-line;font-weight: bold;">统计范围：{{ state.remark }}</p>
+          <p style="white-space: pre-line; font-weight: bold">统计范围：{{ state.remark }}</p>
         </div>
       </template>
     </template>

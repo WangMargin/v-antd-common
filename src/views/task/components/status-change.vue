@@ -12,7 +12,7 @@
         label="是否修改为以下状态"
         required
         name="status"
-        style="margin-bottom:0;padding-bottom:0;"
+        style="margin-bottom: 0; padding-bottom: 0"
       >
         <a-radio-group v-model:value="formData.status">
           <a-radio v-for="(s, i) in formData.statusData" :key="i" :value="s.value">

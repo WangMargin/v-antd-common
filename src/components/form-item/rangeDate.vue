@@ -19,9 +19,7 @@
       :open="endOpen"
       @openChange="handleEndOpenChange"
     />
-    <a-checkbox v-model:checked="checked" @change="checkedFn">
-      至今
-    </a-checkbox>
+    <a-checkbox v-model:checked="checked" @change="checkedFn">至今</a-checkbox>
   </a-space>
   <a-space direction="horizontal" v-if="data.component.parameter.formatter.length === 7">
     <a-month-picker
@@ -43,9 +41,7 @@
       :open="endOpen"
       @openChange="handleEndOpenChange"
     />
-    <a-checkbox v-model:checked="checked" @change="checkedFn">
-      至今
-    </a-checkbox>
+    <a-checkbox v-model:checked="checked" @change="checkedFn">至今</a-checkbox>
   </a-space>
   <a-space direction="horizontal" v-if="data.component.parameter.formatter.length === 4">
     <div @click="openStart">
@@ -74,9 +70,7 @@
         @panelChange="changeEndYearDate"
       />
     </div>
-    <a-checkbox v-model:checked="checked" @change="checkedFn">
-      至今
-    </a-checkbox>
+    <a-checkbox v-model:checked="checked" @change="checkedFn">至今</a-checkbox>
   </a-space>
 </template>
 <script>

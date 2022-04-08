@@ -17,7 +17,7 @@
         @update:selectedKeys="handleSelectedKeysChange"
         :customItem="customItem"
       ></sider-menu>
-      <a-layout style="position: relative;flex-direction: column;">
+      <a-layout style="position: relative; flex-direction: column">
         <header-view
           :theme="theme"
           :layout="layout"
@@ -30,7 +30,7 @@
           :selected-keys="[]"
           :open-keys="[]"
         >
-          <div style="text-align: right;">
+          <div style="text-align: right">
             <avatar-dropdown :current-user="currentUser" />
             <select-lang />
           </div>
@@ -55,7 +55,7 @@
             v-model:open-keys="openKeys"
             v-model:selected-keys="selectedKeys"
           ></sider-menu>
-          <section style="flex: auto;overflow-x: hidden;" class="ant-pro-leftmenu-layout-content">
+          <section style="flex: auto; overflow-x: hidden" class="ant-pro-leftmenu-layout-content">
             <wrap-content>
               <router-view />
               <slot />

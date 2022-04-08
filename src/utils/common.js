@@ -78,10 +78,7 @@ export const downloadFileExcel = (res, name) => {
   const reg = new RegExp('"', 'g');
   const cntDis = res.headers['content-disposition'];
   const fileName = cntDis.includes('filename=')
-    ? cntDis
-        .split(';')[1]
-        .split('=')[1]
-        .replace(reg, '')
+    ? cntDis.split(';')[1].split('=')[1].replace(reg, '')
     : customName;
   const blob = new Blob([res.data], { type: res.headers['content-type'] });
   const href = URL.createObjectURL(blob); //创建新的URL表示指定的blob对象

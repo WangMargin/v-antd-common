@@ -1,5 +1,5 @@
 <template>
-  <a-tabs :animated="false" style="margin-top:-14px;">
+  <a-tabs :animated="false" style="margin-top: -14px">
     <a-tab-pane key="sycamore" tab="科研成果数据">
       <a-table
         :row-key="record => record.category_id"
@@ -70,7 +70,7 @@ export default defineComponent({
       {
         title: '类别',
         dataIndex: 'type_name',
-        customCell: function() {
+        customCell: function () {
           return {
             style: {
               'background-color': '#fafafa',

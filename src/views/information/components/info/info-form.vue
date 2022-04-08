@@ -17,7 +17,7 @@
     >
       <a-spin :spinning="loading">
         <a-divider :style="{ fontSize: '18px', height: '24px' }">{{ formInfo.title }}</a-divider>
-        <a-form :layout="formInfo.direction" style="margin-top:20px">
+        <a-form :layout="formInfo.direction" style="margin-top: 20px">
           <a-form-item label="中心名称" :required="true">
             <a-input
               v-model:value="formInfo.name"
@@ -39,7 +39,7 @@
           </a-form-item>
           <a-form-item label="成立时间" :required="true" v-bind="validateInfos.create_time">
             <a-date-picker
-              style="width:100%;"
+              style="width: 100%"
               :disabledDate="disabledDate"
               v-model:value="modelRef.create_time"
               :format="'YYYY/MM/DD'"
@@ -193,9 +193,9 @@ export default defineComponent({
   padding-bottom: 0;
 }
 .subject-modal-form ::v-deep(.ant-modal-footer) {
-  border-top: 0 none;
   padding: 10px 16px 20px;
   text-align: center;
+  border-top: 0 none;
 }
 .subject-modal-form ::v-deep(.ant-modal-footer .ant-btn-primary) {
   margin-left: 40px;

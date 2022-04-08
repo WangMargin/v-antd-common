@@ -4,7 +4,7 @@
     :width="300"
     :getContainer="getContainer"
     @close="() => setShow(false)"
-    style="z-index: 99;"
+    style="z-index: 99"
     placement="right"
   >
     <template #handle>
@@ -16,7 +16,7 @@
 
     <div :class="`${prefixCls}-content`">
       <body-wrapper key="pageStyle" :title="'app.setting.pagestyle'">
-<!--      <body-wrapper key="pageStyle" :title="locale('app.setting.pagestyle')">-->
+        <!--      <body-wrapper key="pageStyle" :title="locale('app.setting.pagestyle')">-->
         <block-checkbox
           :value="value.navTheme"
           :list="themeList.themeList"
@@ -27,7 +27,7 @@
       <a-divider />
 
       <body-wrapper key="mode" :title="'app.setting.navigationmode'">
-<!--      <body-wrapper key="mode" :title="locale('app.setting.navigationmode')">-->
+        <!--      <body-wrapper key="mode" :title="locale('app.setting.navigationmode')">-->
         <block-checkbox
           :value="value.layout"
           @change="val => handleChange('layout', val)"
@@ -46,15 +46,15 @@
       <a-divider />
 
       <body-wrapper :title="'app.setting.othersettings'">
-<!--      <body-wrapper :title="locale('app.setting.othersettings')">-->
+        <!--      <body-wrapper :title="locale('app.setting.othersettings')">-->
         <a-list :split="false">
           <a-list-item>
-            <span style="opacity: 1;">{{ 'app.setting.transitionname' }}</span>
-<!--            <span style="opacity: 1;">{{ locale('app.setting.transitionname') }}</span>-->
+            <span style="opacity: 1">{{ 'app.setting.transitionname' }}</span>
+            <!--            <span style="opacity: 1;">{{ locale('app.setting.transitionname') }}</span>-->
             <template #actions>
               <a-select
                 size="small"
-                style="width: 100px;"
+                style="width: 100px"
                 :value="value.transitionName || 'null'"
                 @change="val => handleChange('transition', val)"
               >
@@ -69,8 +69,8 @@
 
           <a-tooltip>
             <a-list-item>
-              <span style="opacity: 1;">{{ ('app.setting.multitab') }}</span>
-<!--              <span style="opacity: 1;">{{ locale('app.setting.multitab') }}</span>-->
+              <span style="opacity: 1">{{ 'app.setting.multitab' }}</span>
+              <!--              <span style="opacity: 1;">{{ locale('app.setting.multitab') }}</span>-->
               <template #actions>
                 <a-switch
                   size="small"
@@ -81,12 +81,12 @@
             </a-list-item>
           </a-tooltip>
 
-          <a-tooltip placement="left" :title="('app.setting.multitab.fixed.hit')">
-<!--          <a-tooltip placement="left" :title="locale('app.setting.multitab.fixed.hit')">-->
+          <a-tooltip placement="left" :title="'app.setting.multitab.fixed.hit'">
+            <!--          <a-tooltip placement="left" :title="locale('app.setting.multitab.fixed.hit')">-->
             <a-list-item>
               <span :style="{ opacity: !value.multiTab ? '0.5' : '1' }">
-                {{ ('app.setting.multitab.fixed') }}
-<!--                {{ locale('app.setting.multitab.fixed') }}-->
+                {{ 'app.setting.multitab.fixed' }}
+                <!--                {{ locale('app.setting.multitab.fixed') }}-->
               </span>
               <template #actions>
                 <a-switch
@@ -100,8 +100,8 @@
           </a-tooltip>
 
           <a-list-item>
-            <span style="opacity: 0.5;">{{ ('app.setting.weakmode') }}</span>
-<!--            <span style="opacity: 0.5;">{{ locale('app.setting.weakmode') }}</span>-->
+            <span style="opacity: 0.5">{{ 'app.setting.weakmode' }}</span>
+            <!--            <span style="opacity: 0.5;">{{ locale('app.setting.weakmode') }}</span>-->
             <template #actions>
               <a-switch size="small" :checked="false" :disabled="true" />
             </template>

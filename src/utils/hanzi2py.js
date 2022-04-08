@@ -582,7 +582,7 @@ const pinyin = {
   bia: '\u9adf',
 };
 export default {
-  chineseToPinYin: function(l1) {
+  chineseToPinYin: function (l1) {
     if (typeof l1 === 'number') return l1;
     l1 = l1.toLowerCase();
     const l2 = l1.length;
@@ -603,7 +603,7 @@ export default {
     }
     return I1;
   },
-  arraySearch: function(l1, l2) {
+  arraySearch: function (l1, l2) {
     for (const _name in pinyin) {
       if (pinyin[_name].indexOf(l1) !== -1) {
         return this.ucfirst(_name);
@@ -611,7 +611,7 @@ export default {
     }
     return false;
   },
-  ucfirst: function(l1) {
+  ucfirst: function (l1) {
     if (l1.length > 0) {
       // let first = l1.substr(0, 1).toUpperCase()
       const first = l1.substr(0, 1);

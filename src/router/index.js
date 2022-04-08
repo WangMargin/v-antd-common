@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import UserLayout2 from '@/layouts/user-layout2.vue';
 
 // import routes_ from './routes'
-import routes_ from './services.routes'
+import routes_ from './services.routes';
 export const routes = routes_;
 export const staticRoutes = [
   {

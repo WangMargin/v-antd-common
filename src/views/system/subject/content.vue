@@ -154,9 +154,7 @@
                 <template #icon><search-outlined /></template>
                 搜索
               </a-button>
-              <a-button size="small" style="width: 90px" @click="clearFilters()">
-                重置
-              </a-button>
+              <a-button size="small" style="width: 90px" @click="clearFilters()">重置</a-button>
             </div>
           </template>
           <template #filterIcon>
@@ -537,7 +535,7 @@ export default defineComponent({
 </script>
 <style lang="less" scoped>
 .subject-loading {
-  text-align: center;
   padding: 135px 0;
+  text-align: center;
 }
 </style>

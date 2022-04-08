@@ -1,6 +1,6 @@
 <template>
   <a-card :bordered="false">
-    <div class="table ant-pro-table" style="margin-top:-16px;">
+    <div class="table ant-pro-table" style="margin-top: -16px">
       <a-card :body-style="{ padding: 0 }" :bordered="false" ref="elRef">
         <div class="ant-pro-table-list-toolbar">
           <div class="ant-pro-table-list-toolbar-container">
@@ -151,9 +151,7 @@
                 <template #icon><search-outlined /></template>
                 搜索
               </a-button>
-              <a-button size="small" style="width: 90px" @click="clearFilters()">
-                重置
-              </a-button>
+              <a-button size="small" style="width: 90px" @click="clearFilters()">重置</a-button>
             </div>
           </template>
           <template #filterIcon>
@@ -306,7 +304,7 @@ export default defineComponent({
           title: '合同金额(元)',
           dataIndex: 'info.money',
           sorter: true,
-          customRender: function(text) {
+          customRender: function (text) {
             return moneyTransform(text.text);
           },
           ellipsis: true,
@@ -355,7 +353,7 @@ export default defineComponent({
           title: '收款金额(元)',
           dataIndex: 'info.income_money',
           sorter: true,
-          customRender: function(text) {
+          customRender: function (text) {
             return moneyTransform(text.text);
           },
           ellipsis: true,

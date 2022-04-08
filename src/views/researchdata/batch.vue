@@ -225,12 +225,12 @@ export default defineComponent({
 </script>
 <style lang="less" scoped>
 .notData {
-  height: 500px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  font-size: 14px;
+  justify-content: center;
+  height: 500px;
   color: #999;
+  font-size: 14px;
 }
 .resultBox {
   &.bottom {
@@ -244,12 +244,12 @@ export default defineComponent({
   > span {
     margin: 0 25px;
   }
-  text-align: center;
   position: relative;
-  /*top: 0;*/
-  /*left: 0;*/
+  position: r tive;
+  /*to
   width: 100%;
   padding: 5px 0;
+  text-align: center;
   background: #fff;
 }
 .batch-box {
@@ -265,17 +265,17 @@ export default defineComponent({
     margin: 0px 20px 0 0;
     /*  margin-left: 20px;*/
   }
-  padding-right: 20px;
   position: fixed;
+  top: 50%;
   right: 0;
-  width: 120px;
   right: 20px;
   z-index: 999;
-  top: 50%;
-  height: 20px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  width: 120px;
+  height: 20px;
+  padding-right: 20px;
 }
 .btnsBoxState {
   display: none;
@@ -290,16 +290,16 @@ export default defineComponent({
         margin-left: 20px;
       }
       position: relative;
+      top: 0;
       right: 0;
+      z-index: 999;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
       height: 50px;
       background: #fff;
-      z-index: 999;
-      top: 0;
-      display: flex;
-      width: 100%;
-      justify-content: space-between;
-      align-items: center;
-      flex-direction: row;
     }
     .btnsBoxState {
       display: block;

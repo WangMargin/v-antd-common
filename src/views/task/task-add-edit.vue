@@ -15,7 +15,7 @@
                 mode="year"
                 format="YYYY"
                 :open="state.open"
-                style="width:100%;"
+                style="width: 100%"
                 @openChange="openChange"
                 @panelChange="panelChange"
               />
@@ -25,12 +25,12 @@
         <a-row :gutter="20">
           <a-col :span="12">
             <a-form-item label="统计开始时间和结束时间" required name="time">
-              <a-range-picker style="width:100%;" v-model:value="formData.time" />
+              <a-range-picker style="width: 100%" v-model:value="formData.time" />
             </a-form-item>
           </a-col>
         </a-row>
       </a-card>
-      <a-card :bordered="false" title="选择科研主体" style="margin-top:14px;">
+      <a-card :bordered="false" title="选择科研主体" style="margin-top: 14px">
         <a-form-item name="subjects">
           <a-tree-select
             show-search
@@ -48,12 +48,12 @@
       </a-card>
       <a-card
         :bordered="false"
-        style="margin-top:14px;"
+        style="margin-top: 14px"
         :body-style="{ padding: '4px 20px 60px 20px' }"
       >
         <template #title>
           选择科研项目
-          <em v-if="formData.error" style="font-style:normal;font-size:14px;color:#ff4d4f;">
+          <em v-if="formData.error" style="font-style: normal; font-size: 14px; color: #ff4d4f">
             请选择科研项目
           </em>
         </template>
@@ -147,9 +147,9 @@
           </a-col>
         </a-row>
       </a-card>
-      <a-row :gutter="20" type="flex" justify="center" style="margin-top: 60px;">
+      <a-row :gutter="20" type="flex" justify="center" style="margin-top: 60px">
         <a-col>
-          <a-button style="margin-right:30px;" @click="cancleClick">取消</a-button>
+          <a-button style="margin-right: 30px" @click="cancleClick">取消</a-button>
           <a-button type="primary" :loading="submitLoading" @click="onSubmit">保存</a-button>
         </a-col>
       </a-row>

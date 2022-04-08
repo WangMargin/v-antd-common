@@ -3,9 +3,7 @@
     <div class="custom-render ant-pro-global-footer">
       <div class="ant-pro-global-footer-links" v-if="false">
         <slot name="links">
-          <a href="https://www.antdv.com" target="_blank">
-            Ant Design Vue
-          </a>
+          <a href="https://www.antdv.com" target="_blank">Ant Design Vue</a>
           <a title="github" target="_blank" href="https://github.com/vueComponent/ant-design-vue">
             <span role="img" aria-label="github" class="anticon anticon-github">
               <svg

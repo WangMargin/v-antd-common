@@ -17,7 +17,7 @@
     >
       <a-spin :spinning="loading">
         <a-divider :style="{ fontSize: '18px', height: '24px' }">{{ formInfo.title }}</a-divider>
-        <a-form :layout="formInfo.direction" style="margin-top:20px">
+        <a-form :layout="formInfo.direction" style="margin-top: 20px">
           <template v-if="type === 'staff'">
             <a-form-item label="主体名称" :required="true" v-bind="validateInfos.user_id">
               <a-tree-select
@@ -131,7 +131,7 @@
               v-bind="validateInfos['info.entry_time']"
             >
               <a-date-picker
-                style="width:100%;"
+                style="width: 100%"
                 :disabledDate="disabledDate"
                 v-model:value="modelRef.info.entry_time"
                 :format="'YYYY/MM/DD'"
@@ -141,7 +141,7 @@
             </a-form-item>
             <a-form-item label="离职时间" v-bind="validateInfos['info.leave_time']">
               <a-date-picker
-                style="width:100%;"
+                style="width: 100%"
                 :disabledDate="disabledDate"
                 v-model:value="modelRef.info.leave_time"
                 :format="'YYYY/MM/DD'"
@@ -553,9 +553,9 @@ export default defineComponent({
   padding-bottom: 0;
 }
 .subject-modal-form ::v-deep(.ant-modal-footer) {
-  border-top: 0 none;
   padding: 10px 16px 20px;
   text-align: center;
+  border-top: 0 none;
 }
 .subject-modal-form ::v-deep(.ant-modal-footer .ant-btn-primary) {
   margin-left: 40px;

@@ -17,7 +17,7 @@
     >
       <a-spin :spinning="loading">
         <a-divider :style="{ fontSize: '18px', height: '24px' }">{{ formInfo.title }}</a-divider>
-        <a-form :layout="formInfo.direction" style="margin-top:20px">
+        <a-form :layout="formInfo.direction" style="margin-top: 20px">
           <template v-if="type === 'member'">
             <a-form-item label="姓名" :required="true" v-bind="validateInfos.name">
               <a-input
@@ -50,7 +50,7 @@
             </a-form-item>
             <a-form-item label="入职时间" :required="true" v-bind="validateInfos.entry_time">
               <a-date-picker
-                style="width:100%;"
+                style="width: 100%"
                 :disabledDate="disabledDate"
                 v-model:value="modelRef.entry_time"
                 :format="'YYYY/MM/DD'"
@@ -64,7 +64,7 @@
               v-if="modelRef.status === 'LeaveJob'"
             >
               <a-date-picker
-                style="width:100%;"
+                style="width: 100%"
                 :disabledDate="disabledDate"
                 v-model:value="modelRef.leave_time"
                 :format="'YYYY/MM/DD'"
@@ -83,7 +83,7 @@
             </a-form-item>
             <a-form-item label="捐赠时间" :required="true" v-bind="validateInfos.donation_time">
               <a-date-picker
-                style="width:100%;"
+                style="width: 100%"
                 :disabledDate="disabledDate"
                 v-model:value="modelRef.donation_time"
                 :format="'YYYY/MM/DD'"
@@ -95,7 +95,7 @@
               <a-input-number
                 v-model:value="modelRef.money"
                 placeholder="请填写合同金额"
-                style="width:100%;"
+                style="width: 100%"
                 :precision="2"
                 :min="1"
                 :formatter="value => `${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')"
@@ -127,7 +127,7 @@
             </a-form-item>
             <a-form-item label="收款时间" :required="true" v-bind="validateInfos.income_time">
               <a-date-picker
-                style="width:100%;"
+                style="width: 100%"
                 :disabledDate="disabledDate"
                 v-model:value="modelRef.income_time"
                 :format="'YYYY/MM/DD'"
@@ -143,7 +143,7 @@
               <a-input-number
                 v-model:value="modelRef.income_money"
                 placeholder="请填写收款金额"
-                style="width:100%;"
+                style="width: 100%"
                 :precision="2"
                 :min="1"
                 :formatter="value => `${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')"
@@ -260,7 +260,7 @@ export default defineComponent({
       rulesRef.leave_time = [
         {
           required: true,
-          validator: function(rule, value) {
+          validator: function (rule, value) {
             if (!value && modelRef.status === 'LeaveJob') {
               return Promise.reject('选择离职时间');
             } else {
@@ -396,9 +396,9 @@ export default defineComponent({
   padding-bottom: 0;
 }
 .subject-modal-form ::v-deep(.ant-modal-footer) {
-  border-top: 0 none;
   padding: 10px 16px 20px;
   text-align: center;
+  border-top: 0 none;
 }
 .subject-modal-form ::v-deep(.ant-modal-footer .ant-btn-primary) {
   margin-left: 40px;

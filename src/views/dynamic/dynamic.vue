@@ -76,7 +76,7 @@ export default defineComponent({
 </script>
 <style lang="less" scoped>
 .dynamic-loading {
-  text-align: center;
   padding: 135px 0;
+  text-align: center;
 }
 </style>
