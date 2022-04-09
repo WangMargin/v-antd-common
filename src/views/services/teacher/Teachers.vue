@@ -67,19 +67,19 @@
         </div>
       </a-card>
     </div>
-    <!-- <edit-teacher @ok="editTeacherOk"></edit-teacher> -->
+     <edit-teacher @ok="editTeacherOk"></edit-teacher>
   </page-container>
 </template>
 
 <script>
 // import { message } from 'ant-design-vue';
-// import EditTeacher from './module/EditTeacher';
+import EditTeacher from './module/EditTeacher';
 import { defineComponent, onMounted, reactive, ref, provide } from 'vue';
 import { Subjects } from '@/api/services.js';
 export default defineComponent({
   name: 'Teachers',
   components: {
-    // EditTeacher,
+    EditTeacher,
   },
   setup() {
     const state = reactive({

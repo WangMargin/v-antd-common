@@ -5,10 +5,10 @@
         <div class="header">
           <a href="/">
             <img src="~@/assets/logo.svg" class="logo" alt="logo" />
-            <span class="title">Admin Pro</span>
+            <span class="title">教师公服系统</span>
           </a>
         </div>
-        <div class="desc">Ant Design 是西湖区最具影响力的 Web 设计规范</div>
+        <div class="desc">清华五道口教师公共服务系统</div>
       </div>
 
       <router-view />

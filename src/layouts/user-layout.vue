@@ -5,10 +5,10 @@
         <div class="header">
           <a href="/">
             <img src="~@/assets/logo.svg" class="logo" alt="logo" />
-            <span class="title">Admin Pro</span>
+            <span class="title">教师公共服务</span>
           </a>
         </div>
-        <div class="desc">Admin Pro 是针对 Vue3 语法开发的企业级脚手架</div>
+        <div class="desc">教师公共服务 是针对 Vue3 语法开发的企业级脚手架</div>
       </div>
       <div class="main-container">
         <a-row style="height: 100%; align-items: center; justify-content: center">

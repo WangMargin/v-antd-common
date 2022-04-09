@@ -24,7 +24,7 @@ const routes = [
             path: '/services/home',
             name: name + 'home',
             meta: {
-              title: 'home',
+              title: '首页',
             },
             component: () => import('@/views/services/home'),
           },
@@ -121,10 +121,10 @@ const routes = [
         name: name + 'teacher',
         redirect: '/services/teacher/list',
         meta: {
-          title: 'teacher',
+          title: '师资库',
           icon: '',
           hideChildrenInMenu: true,
-          hideInMenu: true,
+          // hideInMenu: true,
         },
         component: RouteView,
         children: [
@@ -132,7 +132,7 @@ const routes = [
             path: '/services/teacher/list',
             name: name + 'teacherlist',
             meta: {
-              title: 'teacher',
+              title: '师资库',
               icon: '',
               // hideInMenu: true,
             },

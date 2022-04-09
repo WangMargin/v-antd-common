@@ -57,7 +57,13 @@ module.exports = {
     loaderOptions: {
       less: {
         lessOptions: {
-          modifyVars: { ...getThemeVariables() },
+          modifyVars: {
+            ...getThemeVariables(),
+            'primary-color': '#BB133E',
+            'link-color': '#BB133E',
+            'border-radius-base': '2px',
+          },
+
           // DO NOT REMOVE THIS LINE
           javascriptEnabled: true,
         },

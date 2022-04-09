@@ -2,7 +2,7 @@
   <div :class="classNames">
     <span v-if="isMobile" :class="`${baseClassName}-logo`">
       <router-link :to="{ name: 'index' }">
-        <img src="@/assets/logo.png" alt="logo" />
+        <img src="@/assets/logo.svg" alt="logo" />
       </router-link>
     </span>
     <div v-if="isMobile || collapsedButton" :class="`${baseClassName}-collapsed-button`">
@@ -13,8 +13,8 @@
     </div>
     <div v-if="layout === 'mix' && !isMobile" :class="`${baseClassName}-logo`">
       <router-link :to="{ name: 'index' }">
-        <img src="@/assets/logo.png" alt="logo" />
-        <h1>Admin Pro</h1>
+        <img src="@/assets/logo.svg" alt="logo" data="wangyc" />
+        <h1>教师公共服务</h1>
       </router-link>
     </div>
     <div :style="{ flex: 1 }">

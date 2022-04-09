@@ -29,8 +29,8 @@
     >
       <div v-if="!isMix" class="ant-pro-sider-logo">
         <router-link :to="{ name: 'index' }">
-          <img src="@/assets/logo.png" alt="logo" />
-          <h1 v-if="!collapsed">Admin Pro</h1>
+          <img src="@/assets/logo.svg" alt="logo" />
+          <h1 v-if="!collapsed">教师公共服务</h1>
         </router-link>
       </div>
       <div style="flex: 1; overflow: hidden auto">

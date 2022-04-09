@@ -1,7 +1,7 @@
 <template>
   <div>
     <a-row :gutter="[15, 15]" :wrap="state.wrap">
-      <a-col :flex="1">
+      <a-col :span="((24-requireSpan) === 0 ? 24 : (24-requireSpan))">
         <a-card>
           <template #title>填写基础信息</template>
           <template #extra>
@@ -524,6 +524,9 @@ export default defineComponent({
       getResource();
       if (isMobileClient()) {
         state.wrap = true;
+      }
+      if (isMobileClient()) {
+        requireSpan.value = 24;
       }
     });
     const handleApplyStatus = () => {
