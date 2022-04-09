@@ -1,8 +1,6 @@
 <template>
   <div>
-    <a-card>
-      <h1>home</h1>
-    </a-card>
+    <index-module></index-module>
   </div>
 </template>
 
@@ -10,7 +8,12 @@
 import { watch, ref, inject, reactive, onBeforeMount } from 'vue';
 import { Resource } from '@/api/services';
 import ls from '@/utils/local-storage';
+import {STORAGE_RESOURCE} from '@/store/mutation-type';
+import IndexModule from '@/views/services/index/Index'
 export default {
+  components: {
+    IndexModule
+  },
   name: 'home',
   setup() {
     const userFlag = ref(inject('userFlag'));

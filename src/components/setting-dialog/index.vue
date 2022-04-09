@@ -141,6 +141,7 @@ export default defineComponent({
     };
 
     const handleNavThemeChange = e => {
+      console.log(e);
       const value = e.target.value;
       store.commit(`app/${SET_NAV_THEME}`, value);
     };

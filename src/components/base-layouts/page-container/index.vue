@@ -2,6 +2,7 @@
   <div :class="classNames">
     <div :class="`${prefixedClassName}-warp`">
       <a-page-header
+        v-if="false"
         :breadcrumb="
           showBreadcrumb ? { routes: breadcrumb, itemRender: customBreadcrumbRender } : null
         "

@@ -50,9 +50,12 @@
           v-model:open-keys="openKeys"
           v-model:selected-keys="selectedKeys"
         >
-          <div style="text-align: right">
-            <avatar-dropdown :current-user="currentUser" />
-            <select-lang />
+          <div >
+<!--            用户信息-->
+            <HeaderModule></HeaderModule>
+<!--            隐藏用户选择-->
+            <avatar-dropdown :current-user="currentUser" v-if="false" />
+<!--            <select-lang />-->
           </div>
         </header-view>
         <multi-tab
@@ -71,7 +74,7 @@
         <global-footer />
       </a-layout>
     </a-layout>
-    <setting-drawer />
+    <setting-drawer v-if="false" />
   </pro-provider>
 </template>
 <script>
@@ -85,6 +88,7 @@ import { default as HeaderView } from '@/components/base-layouts/header/index.vu
 import { default as SelectLang } from '@/components/select-lang/index.vue';
 import { default as AvatarDropdown } from '@/components/avatar-dropdown.vue';
 import { default as SettingDrawer } from '@/components/setting-drawer/index.vue';
+import HeaderModule from "@/components/Common/HeaderModule/HeaderModule";
 import {
   MultiTab,
   MultiTabStoreProducer,
@@ -100,12 +104,15 @@ export default defineComponent({
     const store = useStore();
     const { t } = useI18n();
     const menuState = injectMenuState();
+    console.log(menuState);
     const isMobile = inject('isMobile', ref(false));
     const currentUser = computed(() => store.getters['user/currentUser']);
-    const hasSideMenu = computed(
-      () => menuState.layout.value === 'side' || menuState.layout.value === 'left',
-    );
-    const hasTopMenu = computed(() => menuState.layout.value === 'top'); // gen menus
+    // const hasSideMenu = computed(
+    //   () => menuState.layout.value === 'side' || menuState.layout.value === 'left',
+    // );
+    const hasSideMenu = 'side';
+    // const hasTopMenu = computed(() => menuState.layout.value === 'top'); // gen menus
+    const hasTopMenu = 'top'; // gen menus
 
     const allowRouters = computed(() => store.getters[`user/allowRouters`]); // genMenuInfo(filterMenu(routes)).menus;
 
@@ -123,6 +130,7 @@ export default defineComponent({
   },
 
   components: {
+    HeaderModule,
     MultiTab,
     MultiTabStoreProducer,
     WrapContent,

@@ -49,7 +49,7 @@ import { useRouter } from 'vue-router';
 import ls from '@/utils/local-storage.js';
 import { STORAGE_RESOURCE } from '@/store/mutation-type';
 import { Activities, Aggregate } from '@/api/services.js';
-import ActivityDetail from '@/view/TaskManagement/components/activity-detail.vue';
+import ActivityDetail from '@/views/services/TaskManagement/components/activity-detail.vue';
 export default defineComponent({
   name: 'index',
   setup(props) {
